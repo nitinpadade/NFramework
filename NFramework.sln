@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFramework.BL", "NFramework
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFramework.DTO", "NFramework.DTO\NFramework.DTO.csproj", "{0D12199F-BA87-48AA-9E77-32D8FD0AA633}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFramework.AS", "NFramework.AS\NFramework.AS.csproj", "{13DA6ECB-7529-4DA0-B5BB-286864963385}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0D12199F-BA87-48AA-9E77-32D8FD0AA633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D12199F-BA87-48AA-9E77-32D8FD0AA633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D12199F-BA87-48AA-9E77-32D8FD0AA633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13DA6ECB-7529-4DA0-B5BB-286864963385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13DA6ECB-7529-4DA0-B5BB-286864963385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13DA6ECB-7529-4DA0-B5BB-286864963385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13DA6ECB-7529-4DA0-B5BB-286864963385}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
