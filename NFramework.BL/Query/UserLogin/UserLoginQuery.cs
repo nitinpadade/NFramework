@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace NFramework.BL.Query.UserLogin
 {
-    public class UserLoginQuery : IQuery<QueryResult<UserLoginResult>, UserLoginParameter>
+    public class UserLoginQuery : IQuery<QueryResult<UserLoginModel>, UserLoginParameter>
     {
         public readonly NFrameworkDataContext _dataContext;
         public UserLoginQuery(NFrameworkDataContext dataContext)
@@ -17,12 +17,12 @@ namespace NFramework.BL.Query.UserLogin
             _dataContext = dataContext;
         }
 
-        public QueryResult<UserLoginResult> Execute(UserLoginParameter parameters)
+        public QueryResult<UserLoginModel> Execute(UserLoginParameter parameters)
         {
             try
             {
                 var result = _dataContext.User.Where(n => n.UserName == parameters.UserName && n.Password == parameters.Password)
-                       .Select(n => new UserLoginResult
+                       .Select(n => new UserLoginModel
                        {
                            IsAuthenticated = true,
                            Name = n.FirstName + " " + n.LastName,
@@ -30,9 +30,9 @@ namespace NFramework.BL.Query.UserLogin
                            UserId = n.Id
                        }).FirstOrDefault();
 
-                return new QueryResult<UserLoginResult>
+                return new QueryResult<UserLoginModel>
                 {
-                    Data = result != null ? result : new UserLoginResult(),
+                    Data = result != null ? result : new UserLoginModel(),
                     Message = result != null ? "Query Executed Successfully" : "No Data Present",
                     IsExecuted = true,
                     Status = CommandQueryStatus.Executed
@@ -41,7 +41,7 @@ namespace NFramework.BL.Query.UserLogin
             }
             catch (Exception ex)
             {
-                return new QueryResult<UserLoginResult>
+                return new QueryResult<UserLoginModel>
                 {
                     Data = null,
                     Message = "Error While Executing Query",

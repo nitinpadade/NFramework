@@ -19,7 +19,7 @@ namespace NFramework.RS.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var queryResult = QueryList<QueryResult<RoleListResult>>();
+            var queryResult = QueryList<QueryResult<RoleListModel>>();
             return Ok(queryResult);
         }
     }

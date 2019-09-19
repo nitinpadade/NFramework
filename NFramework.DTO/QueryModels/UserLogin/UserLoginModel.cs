@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NFramework.DTO.QueryModels.UserLogin
 {
-    public class UserLoginResult
+    public class UserLoginModel
     {
         public int UserId { get; set; }
 
@@ -17,3 +17,4 @@ namespace NFramework.DTO.QueryModels.UserLogin
         public bool IsAuthenticated { get; set; }
     }
 }
+ 

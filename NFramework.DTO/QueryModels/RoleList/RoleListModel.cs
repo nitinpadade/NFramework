@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NFramework.DTO.QueryModels.RoleList
 {
-    public class RoleListResult
+    public class RoleListModel
     {
         public int Id { get; set; }
 
@@ -12,3 +12,4 @@ namespace NFramework.DTO.QueryModels.RoleList
 
     }
 }
+ 

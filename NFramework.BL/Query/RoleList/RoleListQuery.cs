@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace NFramework.BL.Query.RoleList
 {
-    public class RoleListQuery : IQueryList<QueryResult<RoleListResult>>
+    public class RoleListQuery : IQueryList<QueryResult<RoleListModel>>
     {
         public readonly NFrameworkDataContext _dataContext;
         public RoleListQuery(NFrameworkDataContext dataContext)
@@ -17,15 +17,15 @@ namespace NFramework.BL.Query.RoleList
             _dataContext = dataContext;
         }
 
-        public QueryResult<RoleListResult> Execute()
+        public QueryResult<RoleListModel> Execute()
         {
             try
             {
-                var result = _dataContext.Role.Select(n => new RoleListResult { Id = n.Id, Name = n.Name }).ToList();
+                var result = _dataContext.Role.Select(n => new RoleListModel { Id = n.Id, Name = n.Name }).ToList();
 
-                return new QueryResult<RoleListResult>
+                return new QueryResult<RoleListModel>
                 {
-                    DataList = result != null ? result : new List<RoleListResult>(),
+                    DataList = result != null ? result : new List<RoleListModel>(),
                     Message = result != null ? "Query Executed Successfully" : "No Data Present",
                     IsExecuted = true,
                     Status = CommandQueryStatus.Executed
@@ -34,7 +34,7 @@ namespace NFramework.BL.Query.RoleList
             }
             catch (Exception ex)
             {
-                return new QueryResult<RoleListResult>
+                return new QueryResult<RoleListModel>
                 {
                     Data = null,
                     Message = "Error While Executing Query",
