@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NFramework.BL.Contacts;
 
 namespace NFramework.RS.Controllers
 {
-   
+
     public class BaseController : ControllerBase
     {
         readonly IQueryExecutor _query;

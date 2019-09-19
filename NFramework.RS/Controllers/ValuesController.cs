@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NFramework.BL.Contacts;
 using NFramework.DTO.CommandModels.UserCreate;
 using NFramework.DTO.CommandModels.UserDelete;
-using NFramework.DTO.Parameters.UserLogin;
-using NFramework.DTO.QueryModels.UserLogin;
 using NFramework.DTO.Result.Command;
-using NFramework.DTO.Result.Query;
 
 namespace NFramework.RS.Controllers
 {
