@@ -21,6 +21,9 @@ namespace NFramework.BL.Query.RoleList
         {
             try
             {
+                var loginUserId = LoginUserContext.UserId;
+                var loginUser = LoginUserContext.UserName;
+
                 var result = _dataContext.Role.Select(n => new RoleListModel { Id = n.Id, Name = n.Name }).ToList();
 
                 return new QueryResult<RoleListModel>

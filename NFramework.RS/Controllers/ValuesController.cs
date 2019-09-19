@@ -8,36 +8,30 @@ namespace NFramework.RS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : BaseController
+    public class ValuesController : Controller
     {
+        readonly IQueryExecutor _query;
+        readonly ICommandHandler _command;
 
         public ValuesController(IQueryExecutor query, ICommandHandler command)
-            : base(query, command)
         {
-
+            _query = query;
+            _command = command;
         }
 
         // GET api/values
         [HttpGet]
         public IActionResult Get()
         {
-            var commandResult = Command<CommandResult, UserDeleteModel>(new UserDeleteModel { UserId = 0 });
-            return Ok("Resource Server: " + commandResult.Message);
+            //var commandResult = _query.Execute<CommandResult, UserDeleteModel>(new UserDeleteModel { UserId = 0 });
+            return Ok("Resource Server");
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            /*var result = Query<QueryResult<UserLoginResult>, UserLoginParameter>(new UserLoginParameter
-            {
-                UserName = "nitin_padade@persistent.com",
-                Password = "nitin@1234"
-            });*/
-
-            var commandResult = Command<CommandResult, UserCreateModel>(new UserCreateModel { FirstName = "Nitin", LastName = "Padade", Id = id });
-
-            return Ok(commandResult);
+           return Ok("Result");
         }
 
         // POST api/values
