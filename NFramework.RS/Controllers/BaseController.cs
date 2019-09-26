@@ -23,7 +23,7 @@ namespace NFramework.RS.Controllers
         {
             SetLoginUserContext();
             return _query.Execute<TResult, TParameters>(parameters);
-        }
+        } 
 
         public TResult Command<TResult, TModel>(TModel cmdObj)
            where TResult : class
