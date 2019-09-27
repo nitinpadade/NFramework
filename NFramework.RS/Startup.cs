@@ -48,6 +48,15 @@ namespace NFramework.RS
              };
          });
 
+            // Add Cors
+            services.AddCors(o => o.AddPolicy("Cors", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();
+            }));
+
             services.AddDbContext<NFrameworkDataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NFrameworkDataContext")));
             services.AddScoped<IQueryExecutor, QueryExecutor>();
             services.AddScoped<ICommandHandler, CommandHandler>();
@@ -66,6 +75,7 @@ namespace NFramework.RS
                 app.UseHsts();
             }
 
+            app.UseCors("Cors");
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();

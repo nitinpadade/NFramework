@@ -30,6 +30,15 @@ namespace NFramework.AS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add Cors
+            services.AddCors(o => o.AddPolicy("Cors", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();
+            }));
+
             services.AddDbContext<NFrameworkDataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NFrameworkDataContext")));
             services.AddScoped<IQueryExecutor, QueryExecutor>();
             services.AddScoped<ICommandHandler, CommandHandler>();
@@ -48,6 +57,7 @@ namespace NFramework.AS
                 app.UseHsts();
             }
 
+            app.UseCors("Cors");
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
