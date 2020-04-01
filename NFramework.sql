@@ -46,15 +46,6 @@ GO
 INSERT [dbo].[Role] ([Id], [Name]) VALUES (3, N'Accounts')
 GO
 SET IDENTITY_INSERT [dbo].[Role] OFF
-GO
-SET IDENTITY_INSERT [dbo].[User] ON 
 
-GO
-INSERT [dbo].[User] ([Id], [FirstName], [LastName], [MiddleName], [Email], [Mobile], [UserName], [Password], [RoleId], [DateOfBirth]) VALUES (1, N'Nitin', N'Padade', N'L', N'abc.com', N'1007009001', N'abc.com', N'abc@1234', 1, CAST(N'1981-09-09T00:00:00.000' AS DateTime))
-GO
-INSERT [dbo].[User] ([Id], [FirstName], [LastName], [MiddleName], [Email], [Mobile], [UserName], [Password], [RoleId], [DateOfBirth]) VALUES (2, N'Bhooshan', N'Sane', N'', N'pqr.com', N'1241241414', N'pqr.com', N'pqr@123', 2, CAST(N'1987-07-09T00:00:00.000' AS DateTime))
-GO
-SET IDENTITY_INSERT [dbo].[User] OFF
-GO
 ALTER DATABASE [School] SET  READ_WRITE 
 GO
